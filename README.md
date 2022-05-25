@@ -28,23 +28,6 @@ We use [`@testing-library/cypress`](https://testing-library.com/cypress) for sel
 
 To run these tests in development, run `npm run test:e2e:dev` which will start the dev server for the app as well as the Cypress client. Make sure the database is running in docker as described above.
 
-We have a utility for testing authenticated features without having to go through the login flow:
-
-```ts
-cy.login();
-// you are now logged in as a new user
-```
-
-We also have a utility to auto-delete the user at the end of your test. Just make sure to add this in each test file:
-
-```ts
-afterEach(() => {
-  cy.cleanupUser();
-});
-```
-
-That way, we can keep your local db clean and keep your tests isolated from one another.
-
 ### Vitest
 
 For lower level tests of utilities and individual components, we use `vitest`. We have DOM-specific assertion helpers via [`@testing-library/jest-dom`](https://testing-library.com/jest-dom).
