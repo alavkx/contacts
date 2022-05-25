@@ -14,7 +14,7 @@ describe("smoke tests", () => {
     const emptyText = "Absolutely zero friends lmao 🤣";
     cy.visit("/");
 
-    cy.findByRole("link", { name: /notes/i }).click();
+    cy.findByRole("link", { name: /contacts/i }).click();
     cy.findByText(emptyText);
 
     cy.findByRole("link", { name: /\+ new contact/i }).click();
